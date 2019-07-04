@@ -16,7 +16,6 @@ func ReadCSV(filename string) (input [3][3]int, err error) {
 	if err != nil {
 		return [3][3]int{}, err
 	}
-	//var intMax [3][3]int
 	for i, record := range records {
 		for j, elem := range record {
 			val, err := strconv.Atoi(elem)
@@ -24,9 +23,7 @@ func ReadCSV(filename string) (input [3][3]int, err error) {
 				return [3][3]int{}, err
 			}
 			input[i][j] = val
-			//intMax[i][j] = val
 		}
 	}
 	return input, nil
-	//return intMax, nil
 }
